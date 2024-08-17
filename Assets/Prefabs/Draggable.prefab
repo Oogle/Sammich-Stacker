@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1063448704466905632}
   - component: {fileID: 1158918595671743048}
-  - component: {fileID: 6768871326700910629}
   - component: {fileID: 3072933571193982443}
   - component: {fileID: -8335766725430077050}
+  - component: {fileID: -2741246638187758257}
   m_Layer: 6
   m_Name: Draggable
   m_TagString: Untagged
@@ -147,25 +147,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6768871326700910629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7013041247721443645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed4d9e3926e09a4bb113b2740dcb950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_DragLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Damping: 100
-  m_Frequency: 2.2
-  m_DrawDragLine: 1
-  m_Color: {r: 0.51311016, g: 1, b: 0, a: 1}
 --- !u!60 &3072933571193982443
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -229,6 +210,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scores:
+    ingredientType: 0
     calories: 0
     taste: 0
     looks: 0
+--- !u!114 &-2741246638187758257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013041247721443645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed4d9e3926e09a4bb113b2740dcb950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

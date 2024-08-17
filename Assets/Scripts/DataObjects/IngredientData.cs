@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class IngredientController : MonoBehaviour
+    public class IngredientData : MonoBehaviour
     {
         [SerializeField]
         private IngredientScores scores;

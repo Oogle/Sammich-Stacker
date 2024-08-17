@@ -29,7 +29,7 @@ namespace Controllers
             foreach (var overlapCollider in overlapColliders)
             {
                 var colliderGameObject = overlapCollider.gameObject;
-                var ingredientController = colliderGameObject.GetComponent<IngredientController>();
+                var ingredientController = colliderGameObject.GetComponent<IngredientData>();
                 
                 if(ingredientController == null) continue;
 
