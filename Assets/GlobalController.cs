@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using TMPro;
 using UnityEngine;
 
 public class GlobalController : MonoBehaviour
@@ -13,6 +14,7 @@ public class GlobalController : MonoBehaviour
     public List<GameObject> placedVeggies = new List<GameObject>();
     public List<GameObject> placedFruits = new List<GameObject>();
     public float proteinPercentage, veggiePercentage, fruitPercentage;
+    [SerializeField] TextMeshProUGUI proteinPercentageDisplay, veggiePercentageDisplay, fruitPercentageDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class GlobalController : MonoBehaviour
         proteinPercentage = placedProteins.Count * 100 / totalIngredientCount;
         veggiePercentage = placedVeggies.Count * 100 / totalIngredientCount;
         fruitPercentage = placedFruits.Count * 100 / totalIngredientCount;
+        proteinPercentageDisplay.text = proteinPercentage.ToString() + "%";
+        veggiePercentageDisplay.text = veggiePercentage.ToString() + "%";
+        fruitPercentageDisplay.text = fruitPercentage.ToString() + "%";
     }
     public void SpawnProtein(){
         int whichProtein = UnityEngine.Random.Range(0, proteins.Length);
