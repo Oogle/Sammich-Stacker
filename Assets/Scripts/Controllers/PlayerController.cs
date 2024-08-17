@@ -65,7 +65,6 @@ namespace Controllers
 
         private void OnMouseUp()
         {
-            Debug.Log("OnMouseUp");
             draggedComponent?.EndDrag();
         }
     }
