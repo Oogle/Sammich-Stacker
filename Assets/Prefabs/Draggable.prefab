@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5888003695584970282}
   - component: {fileID: 8645368491549065066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,8 @@ GameObject:
   - component: {fileID: 1158918595671743048}
   - component: {fileID: 6768871326700910629}
   - component: {fileID: 3072933571193982443}
-  m_Layer: 0
+  - component: {fileID: -8335766725430077050}
+  m_Layer: 6
   m_Name: Draggable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5888003695584970282}
@@ -215,3 +216,19 @@ PolygonCollider2D:
       - {x: 0.48386157, y: -0.501763}
       - {x: 0.5172865, y: 0.5078283}
   m_UseDelaunayMesh: 0
+--- !u!114 &-8335766725430077050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013041247721443645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab29053d775f9a46a89b2d88bf91e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scores:
+    calories: 0
+    taste: 0
+    looks: 0

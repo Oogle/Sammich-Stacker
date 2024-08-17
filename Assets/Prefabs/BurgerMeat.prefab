@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8335766725430077050, guid: 6a841c88e92a75143993800bce6af003, type: 3}
+      propertyPath: scores.looks
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8335766725430077050, guid: 6a841c88e92a75143993800bce6af003, type: 3}
+      propertyPath: scores.taste
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8335766725430077050, guid: 6a841c88e92a75143993800bce6af003, type: 3}
+      propertyPath: scores.calories
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1063448704466905632, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -20,12 +20,33 @@ namespace Controllers
         {
             List<Collider2D> overlapColliders = new List<Collider2D>();
             collectionArea.OverlapCollider(contactFilter, overlapColliders);
+
+            var ingredientCount = 0;
+            var calories = 0;
+            var taste = 0;
+            var looks = 0;
             
-            foreach (var collider in overlapColliders)
+            foreach (var overlapCollider in overlapColliders)
             {
-                var name = collider.gameObject.name;
-                Debug.Log(name);
+                var colliderGameObject = overlapCollider.gameObject;
+                var ingredientController = colliderGameObject.GetComponent<IngredientController>();
+                
+                if(ingredientController == null) continue;
+
+                var scores = ingredientController.Scores;
+                calories += scores.calories;
+                taste += scores.taste;
+                looks += scores.looks;
+                ingredientCount++;
             }
+
+            if (ingredientCount == 0)
+            {
+                Debug.Log("No ingredient found");
+                return;
+            }
+            
+            Debug.Log($"Total Calories: {calories}, Average Taste: {taste/ingredientCount}, Average Looks: {looks/ingredientCount}");
         }
     }
 }
