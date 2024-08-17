@@ -9,7 +9,7 @@ public class CondimentBottle : MonoBehaviour
     [SerializeField] private float spinSpeed = 15; //How fast the rotation tween should play
     [SerializeField] private Transform bottleSprite;
     [SerializeField] private Transform tip; //The bottle tip transform object that will be used to spray to condiment
-    [SerializeField] private GameObject globsToSpawn; //The prefab to spawn when the player stops holding down the mouse
+    [SerializeField] private GameObject globPrefab; //The prefab to spawn when the player stops holding down the mouse
     private bool movingToStart = false; //Is the bottle trying to go back to the start?
     private bool rotateUp = true; //Should the bottle be rotating up?
     private bool inPlayArea = false; //Is the bottle inside the acceptable play area?
@@ -36,6 +36,7 @@ public class CondimentBottle : MonoBehaviour
     //Sprays the condiment on to the sandwich
     void sprayCondiment()
     {
+        Instantiate(globPrefab, tip.position, Quaternion.identity);
         movingToStart = true;
     }
 

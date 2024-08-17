@@ -193,7 +193,6 @@ Transform:
   m_Children:
   - {fileID: 4846854182908578783}
   - {fileID: 2402117430072683160}
-  - {fileID: 7438863256223210162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &499860369568669275
@@ -269,7 +268,8 @@ MonoBehaviour:
   moveSpeed: 30
   spinSpeed: 15
   bottleSprite: {fileID: 4846854182908578783}
-  tip: {fileID: 0}
+  tip: {fileID: 7438863256223210162}
+  globPrefab: {fileID: 2001096051401643415, guid: 25378dfe1f51a1d43a4d18d8748e66c9, type: 3}
 --- !u!1 &3754562650543910537
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +519,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7438863256223210162}
   - {fileID: 8636124757692972934}
   - {fileID: 6172353051215003202}
   m_Father: {fileID: 3704942269831505413}
@@ -547,10 +548,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5003314889966356910}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: 1.794, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0050001144, y: 1.794, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3704942269831505413}
+  m_Father: {fileID: 4846854182908578783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
