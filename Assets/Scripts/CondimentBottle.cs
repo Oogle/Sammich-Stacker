@@ -18,9 +18,23 @@ public class CondimentBottle : MonoBehaviour
         startCoords = bottleSprite.position;
     }
 
-    void OnMouseUpAsButton()
+    void OnMouseUp()
     {
-        movingToStart = true;
+        if(inPlayArea)
+        {
+
+        }
+        else
+        {
+            movingToStart = true;
+        }
+        
+    }
+
+    //Sprays the condiment on to the sandwich
+    void sprayCondiment()
+    {
+
     }
 
     //The CondimentBottle layer cannot interact with any other physics layers. This assumes the ONLY other thing on the CondimentBottle layer is the bottleBoundry
