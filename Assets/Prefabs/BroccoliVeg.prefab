@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BroccoliVeg
       objectReference: {fileID: 0}
+    - target: {fileID: 7013041247721443645, guid: 6a841c88e92a75143993800bce6af003, type: 3}
+      propertyPath: m_TagString
+      value: Veggie
+      objectReference: {fileID: 0}
     - target: {fileID: 8645368491549065066, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_Color.b
       value: 0
