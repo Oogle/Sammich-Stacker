@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6172353051215003202}
   - component: {fileID: 5288513928025927}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2237047988434664288}
   - component: {fileID: 5637621312457302704}
   - component: {fileID: 1747967654737773121}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 499860369568669275}
   - component: {fileID: 1072325686221574043}
   - component: {fileID: 2580212552389105054}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: CondimentBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,6 +193,7 @@ Transform:
   m_Children:
   - {fileID: 4846854182908578783}
   - {fileID: 2402117430072683160}
+  - {fileID: 7438863256223210162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &499860369568669275
@@ -224,7 +225,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0063056946, y: -0.0031526089}
@@ -268,6 +269,7 @@ MonoBehaviour:
   moveSpeed: 30
   spinSpeed: 15
   bottleSprite: {fileID: 4846854182908578783}
+  tip: {fileID: 0}
 --- !u!1 &3754562650543910537
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8636124757692972934}
   - component: {fileID: 7012563412565123520}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Condiment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2402117430072683160}
   - component: {fileID: 7987267977251245210}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BarUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +425,7 @@ GameObject:
   - component: {fileID: 8945303525941482539}
   - component: {fileID: 1231516902994421398}
   - component: {fileID: 7923669948240903567}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BarContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,5 +521,36 @@ Transform:
   m_Children:
   - {fileID: 8636124757692972934}
   - {fileID: 6172353051215003202}
+  m_Father: {fileID: 3704942269831505413}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5003314889966356910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7438863256223210162}
+  m_Layer: 0
+  m_Name: TipTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7438863256223210162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5003314889966356910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.005, y: 1.794, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 3704942269831505413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
