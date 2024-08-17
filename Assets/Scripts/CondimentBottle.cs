@@ -8,6 +8,8 @@ public class CondimentBottle : MonoBehaviour
     [SerializeField] private float moveSpeed = 30; //How fast the tween towards the start coordinates should be when player releases mouse button
     [SerializeField] private float spinSpeed = 15; //How fast the rotation tween should play
     [SerializeField] private Transform bottleSprite;
+    [SerializeField] private Transform tip; //The bottle tip transform object that will be used to spray to condiment
+    [SerializeField] private GameObject globsToSpawn; //The prefab to spawn when the player stops holding down the mouse
     private bool movingToStart = false; //Is the bottle trying to go back to the start?
     private bool rotateUp = true; //Should the bottle be rotating up?
     private bool inPlayArea = false; //Is the bottle inside the acceptable play area?
@@ -18,7 +20,21 @@ public class CondimentBottle : MonoBehaviour
         startCoords = bottleSprite.position;
     }
 
-    void OnMouseUpAsButton()
+    void OnMouseUp()
+    {
+        if(inPlayArea)
+        {
+            sprayCondiment();
+        }
+        else
+        {
+            movingToStart = true;
+        }
+        
+    }
+
+    //Sprays the condiment on to the sandwich
+    void sprayCondiment()
     {
         movingToStart = true;
     }
@@ -27,15 +43,21 @@ public class CondimentBottle : MonoBehaviour
     //When entering play area, face down.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        inPlayArea = true;
-        rotateUp = false;
+        if (collision.gameObject.CompareTag("PlayArea"))
+        {
+            inPlayArea = true;
+            rotateUp = false;
+        }
     }
 
     //When leaving the player area, rotate back to up 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        inPlayArea = false;
-        rotateUp = true;
+        if (collision.gameObject.CompareTag("PlayArea"))
+        {
+            inPlayArea = false;
+            rotateUp = true;
+        }
     }
 
     // Update is called once per frame
