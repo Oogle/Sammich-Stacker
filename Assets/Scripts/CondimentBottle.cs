@@ -22,7 +22,7 @@ public class CondimentBottle : MonoBehaviour
     {
         if(inPlayArea)
         {
-
+            sprayCondiment();
         }
         else
         {
@@ -41,15 +41,21 @@ public class CondimentBottle : MonoBehaviour
     //When entering play area, face down.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        inPlayArea = true;
-        rotateUp = false;
+        if (collision.gameObject.CompareTag("PlayArea"))
+        {
+            inPlayArea = true;
+            rotateUp = false;
+        }
     }
 
     //When leaving the player area, rotate back to up 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        inPlayArea = false;
-        rotateUp = true;
+        if (collision.gameObject.CompareTag("PlayArea"))
+        {
+            inPlayArea = false;
+            rotateUp = true;
+        }
     }
 
     // Update is called once per frame
