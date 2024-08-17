@@ -26,13 +26,11 @@ public class CondimentGlob : MonoBehaviour
             primaryJoint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
             int globInteractLayer = LayerMask.NameToLayer("Ingredient");
             this.gameObject.layer = globInteractLayer;
-            print("Glob found first joint!");
             hasFirstJoint = true;
             sprite.enabled = true;
         }
         else if(!hasSecondJoint)
         {
-            print("Glob found second joint!");
             //With the first joint, then the primary food has touched some over piece of food
             secondJoint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
         }
