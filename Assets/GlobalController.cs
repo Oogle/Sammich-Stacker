@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class GlobalController : MonoBehaviour
@@ -7,6 +8,11 @@ public class GlobalController : MonoBehaviour
     public enum ingredients{protein,veggie,fruit};
     [SerializeField] private GameObject[] proteins,veggies,fruits; 
     [SerializeField] private Transform foodSpawnerTransform;
+    public List<GameObject> placedIngredients = new List<GameObject>();
+    public List<GameObject> placedProteins = new List<GameObject>();
+    public List<GameObject> placedVeggies = new List<GameObject>();
+    public List<GameObject> placedFruits = new List<GameObject>();
+    public float proteinPercentage, veggiePercentage, fruitPercentage;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +22,13 @@ public class GlobalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CalculatePercentages();
+    }
+    private void CalculatePercentages(){
+        int totalIngredientCount = placedProteins.Count + placedVeggies.Count + placedFruits.Count;
+        proteinPercentage = placedProteins.Count * 100 / totalIngredientCount;
+        veggiePercentage = placedVeggies.Count * 100 / totalIngredientCount;
+        fruitPercentage = placedFruits.Count * 100 / totalIngredientCount;
     }
     public void SpawnProtein(){
         int whichProtein = UnityEngine.Random.Range(0, proteins.Length);
