@@ -8,7 +8,7 @@ namespace Components
 
         private TargetJoint2D targetJoint;
         public bool isDraggable { get; set; } = true;
-        private Rigidbody2D rigidbody;
+        private new Rigidbody2D rigidbody;
 
         private void Start()
         {
