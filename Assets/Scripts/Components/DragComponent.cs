@@ -16,6 +16,7 @@ public class DragComponent : MonoBehaviour
     public Color m_Color = Color.cyan;
 
     private TargetJoint2D m_TargetJoint;
+    public bool isDraggable { get; set; } = true;
 
     void Update()
     {
