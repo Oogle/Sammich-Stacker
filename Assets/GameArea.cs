@@ -16,13 +16,15 @@ public class GameArea : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Protein")){
-            globalController.placedProteins.Add(other.gameObject);
-        }else if (other.gameObject.CompareTag("Veggie")){
-            globalController.placedVeggies.Add(other.gameObject);
-        }else if (other.gameObject.CompareTag("Fruit")){
-            globalController.placedFruits.Add(other.gameObject);
+
+    public void UpdateIngredients(GameObject ingredient){
+        if (ingredient.CompareTag("Protein")){
+            globalController.placedProteins.Add(ingredient);
+        }else if (ingredient.CompareTag("Veggie")){
+            globalController.placedVeggies.Add(ingredient);
+        }else if (ingredient.CompareTag("Fruit")){
+            globalController.placedFruits.Add(ingredient);
         }
+        globalController.CalculatePercentages();
     }
 }
