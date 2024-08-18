@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Controllers;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
@@ -14,8 +15,9 @@ public class GlobalController : MonoBehaviour
     public List<GameObject> placedVeggies = new List<GameObject>();
     public List<GameObject> placedFruits = new List<GameObject>();
     public float proteinPercentage, veggiePercentage, fruitPercentage;
-    [SerializeField] TextMeshProUGUI proteinPercentageDisplay, veggiePercentageDisplay, fruitPercentageDisplay;
+    [SerializeField] TextMeshProUGUI proteinPercentageDisplay, veggiePercentageDisplay, fruitPercentageDisplay,calorieDisplay;
     [SerializeField] private IngredientArea ingredientArea;
+    [SerializeField] private int totalCalories;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,8 @@ public class GlobalController : MonoBehaviour
     {
         
     }
-    public void CalculatePercentages(){
+    public void Calculate(){
+        //Calculate Ratio Percentages
         int totalIngredientCount = placedProteins.Count + placedVeggies.Count + placedFruits.Count;
         if (totalIngredientCount == 0) return;
         proteinPercentage = placedProteins.Count * 100 / totalIngredientCount;
@@ -36,6 +39,13 @@ public class GlobalController : MonoBehaviour
         proteinPercentageDisplay.text = proteinPercentage.ToString() + "%";
         veggiePercentageDisplay.text = veggiePercentage.ToString() + "%";
         fruitPercentageDisplay.text = fruitPercentage.ToString() + "%";
+        //Calculate Calories
+        totalCalories = 0;
+        foreach (GameObject ingredient in placedIngredients){
+            print(ingredient.GetComponent<IngredientData>().Scores.calories);
+            totalCalories += ingredient.GetComponent<IngredientData>().Scores.calories;
+        }
+        calorieDisplay.text = totalCalories.ToString() + "kCal";
     }
     public void SpawnIngredient(int ingredient){ //0 = protein, 1 = veggie, 2 = fruit. Less than 0 = protein, greater than 2 = fruit.
         if (ingredientArea.hasIngredient) return;

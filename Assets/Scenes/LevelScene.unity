@@ -1354,7 +1354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalController: {fileID: 1749190029}
-  hasUnPlacedIngredient: 0
 --- !u!1001 &788482255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2614,7 +2613,9 @@ MonoBehaviour:
   proteinPercentageDisplay: {fileID: 482947441}
   veggiePercentageDisplay: {fileID: 2074817509}
   fruitPercentageDisplay: {fileID: 175088525}
+  calorieDisplay: {fileID: 5829313900713354334}
   ingredientArea: {fileID: 2053380435}
+  totalCalories: 0
 --- !u!1 &1803419792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,6 +3592,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &812061824671859671
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6577549541285376471, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_Name
+      value: TopBreadSlice
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.06556236
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
 --- !u!222 &3048940692917876682
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3684,7 +3742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100g
+  m_text: 0kCal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3950,5 +4008,6 @@ SceneRoots:
   - {fileID: 1749190028}
   - {fileID: 788482255}
   - {fileID: 157531115}
+  - {fileID: 812061824671859671}
   - {fileID: 2053380434}
   - {fileID: 1683075500}
