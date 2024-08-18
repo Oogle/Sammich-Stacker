@@ -26,7 +26,7 @@ public class GlobalController : MonoBehaviour
     {
         CalculatePercentages();
     }
-    private void CalculatePercentages(){
+    public void CalculatePercentages(){
         int totalIngredientCount = placedProteins.Count + placedVeggies.Count + placedFruits.Count;
         if (totalIngredientCount == 0) return;
         proteinPercentage = placedProteins.Count * 100 / totalIngredientCount;
