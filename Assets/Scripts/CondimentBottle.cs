@@ -1,10 +1,10 @@
 /*The CondimentBottle Script
  * Uses on the condiment bottle itself. It expects a trigger object around the desired play area. This trigger should be tagged "PlayArea".
  * Once the bottle enters the area, the bottle's sprite will flip upside down. When it exits, the sprite will turn back up again.
- * If the player releases the mouse drag:
+ * If the player presses the right mouse button
  *              -If inside the play area, the bottle will spawn the globPrefab and let it fall down.
- *              -Then, no matter what, the bottle will smoothly float back to the original area.
- * See the GlobSPlatter prefab for more info on how the globs actually work.
+ * When the player releases the left mouse button, then the condiment bottle goes back to the original coords
+ * See the Glob prefab for more info on how the globs actually work.
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -22,14 +22,18 @@ public class CondimentBottle : MonoBehaviour
     private bool rotateUp = true; //Should the bottle be rotating up?
     private bool inPlayArea = false; //Is the bottle inside the acceptable play area?
 
+
     [SerializeField] float sprayDelay; //How long (in seconds) should be between glob sprays?
-    [SerializeField] float sprayTimer; //A countdown timer that counts from sprayDelay to 0. Represents how long until the next condiment glob can spawn
+    float sprayTimer; //A countdown timer that counts from sprayDelay to 0. Represents how long until the next condiment glob can spawn
+    [SerializeField] private int globsLeft; //How many more globs can be sprayed out? Will eventually become zero
+    private int maxGlobs; //The original value of globsLeft
 
     // Start is called before the first frame update
     void Start()
     {
         sprayTimer = sprayDelay; //Maybe start this at zero?
         startCoords = bottleSprite.position;
+        maxGlobs = globsLeft;
     }
 
     void OnMouseUp()
@@ -41,6 +45,7 @@ public class CondimentBottle : MonoBehaviour
     void sprayCondiment()
     {
         Instantiate(globPrefab, tip.position, Quaternion.identity);
+        globsLeft -= 1;
         //movingToStart = true;
     }
 
@@ -68,7 +73,7 @@ public class CondimentBottle : MonoBehaviour
     void checkMouse()
     {
         //Allow the player to spray condiment if timer has been fully delayed
-        if (sprayTimer <= 0 && Input.GetMouseButton(1))
+        if (globsLeft > 0 && sprayTimer <= 0 && Input.GetMouseButton(1))
         {
             sprayCondiment();
             sprayTimer = sprayDelay;
