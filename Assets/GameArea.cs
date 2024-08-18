@@ -20,11 +20,14 @@ public class GameArea : MonoBehaviour
     public void UpdateIngredients(GameObject ingredient){
         if (ingredient.CompareTag("Protein")){
             globalController.placedProteins.Add(ingredient);
+            globalController.placedIngredients.Add(ingredient);
         }else if (ingredient.CompareTag("Veggie")){
             globalController.placedVeggies.Add(ingredient);
+            globalController.placedIngredients.Add(ingredient);
         }else if (ingredient.CompareTag("Fruit")){
             globalController.placedFruits.Add(ingredient);
+            globalController.placedIngredients.Add(ingredient);
         }
-        globalController.CalculatePercentages();
+        globalController.Calculate();
     }
 }
