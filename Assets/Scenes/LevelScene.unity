@@ -291,6 +291,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &175832249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6577549541285376471, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
+  m_PrefabInstance: {fileID: 812061824671859671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &232903042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2634,6 +2639,7 @@ MonoBehaviour:
   calorieDisplay: {fileID: 5829313900713354334}
   ingredientArea: {fileID: 2053380435}
   totalCalories: 0
+  isDone: 0
 --- !u!1 &1803419792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,7 +3385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1913979877}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 175832249}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1913979877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3628,7 +3646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.25
+      value: 5.45
       objectReference: {fileID: 0}
     - target: {fileID: 9191914789773995922, guid: bfe9214c22e8141a9942f57e4996220d, type: 3}
       propertyPath: m_LocalPosition.z

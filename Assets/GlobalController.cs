@@ -18,6 +18,7 @@ public class GlobalController : MonoBehaviour
     [SerializeField] TextMeshProUGUI proteinPercentageDisplay, veggiePercentageDisplay, fruitPercentageDisplay,calorieDisplay;
     [SerializeField] private IngredientArea ingredientArea;
     [SerializeField] private int totalCalories;
+    public bool isDone = false;
     // Start is called before the first frame update
     void Start()
     {
