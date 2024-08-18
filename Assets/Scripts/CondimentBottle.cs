@@ -1,3 +1,11 @@
+/*The CondimentBottle Script
+ * Uses on the condiment bottle itself. It expects a trigger object around the desired play area. This trigger should be tagged "PlayArea".
+ * Once the bottle enters the area, the bottle's sprite will flip upside down. When it exits, the sprite will turn back up again.
+ * If the player releases the mouse drag:
+ *              -If inside the play area, the bottle will spawn the globPrefab and let it fall down.
+ *              -Then, no matter what, the bottle will smoothly float back to the original area.
+ * See the GlobSPlatter prefab for more info on how the globs actually work.
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,10 +74,13 @@ public class CondimentBottle : MonoBehaviour
     {
         if(movingToStart)
         {
+            //Smoothly tween the sandwhich back to the start area
             transform.position = Vector3.MoveTowards(transform.position, startCoords, moveSpeed * Time.deltaTime);
 
             if (transform.position == startCoords)
             {
+                //Debug just in case the bottle doesn't flip fast enough by the time it gets to the start point
+                //Then just set it manually straight up
                 movingToStart = false;
                 bottleSprite.rotation = Quaternion.Euler(0, 0, 0);
             }
