@@ -60,14 +60,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5888003695584970282, guid: 6a841c88e92a75143993800bce6af003, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.318757
-      objectReference: {fileID: 0}
-    - target: {fileID: 5888003695584970282, guid: 6a841c88e92a75143993800bce6af003, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4162
-      objectReference: {fileID: 0}
     - target: {fileID: 7013041247721443645, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_Name
       value: BurgerMeat
@@ -77,16 +69,20 @@ PrefabInstance:
       value: Protein
       objectReference: {fileID: 0}
     - target: {fileID: 8645368491549065066, guid: 6a841c88e92a75143993800bce6af003, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c73cc67608d68f44bb8c8c099c7059f3, type: 3}
+    - target: {fileID: 8645368491549065066, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_Color.b
-      value: 0.12265573
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645368491549065066, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_Color.g
-      value: 0.3936043
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8645368491549065066, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_Color.r
-      value: 0.6075471
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3072933571193982443, guid: 6a841c88e92a75143993800bce6af003, type: 3}
@@ -134,7 +130,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4155919, y: 0}
+  m_Offset: {x: 0.011929631, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -145,5 +141,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.33098, y: 1}
+  m_Size: {x: 5.1860228, y: 1}
   m_EdgeRadius: 0
