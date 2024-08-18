@@ -1354,6 +1354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalController: {fileID: 1749190029}
+  hasUnPlacedIngredient: 0
 --- !u!1001 &788482255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2613,6 +2614,7 @@ MonoBehaviour:
   proteinPercentageDisplay: {fileID: 482947441}
   veggiePercentageDisplay: {fileID: 2074817509}
   fruitPercentageDisplay: {fileID: 175088525}
+  ingredientArea: {fileID: 2053380435}
 --- !u!1 &1803419792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,8 +3447,9 @@ GameObject:
   - component: {fileID: 2053380434}
   - component: {fileID: 2053380433}
   - component: {fileID: 2053380432}
+  - component: {fileID: 2053380435}
   m_Layer: 0
-  m_Name: IngredientDropArea
+  m_Name: IngredientArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3564,6 +3567,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2053380435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053380431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414f4de45b6634345999ee82306b3aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasIngredient: 0
 --- !u!114 &2074817509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3326155883547610354, guid: 8bc062f5f00454699b91806765d6e116, type: 3}
@@ -3935,3 +3951,4 @@ SceneRoots:
   - {fileID: 788482255}
   - {fileID: 157531115}
   - {fileID: 2053380434}
+  - {fileID: 1683075500}

@@ -9,7 +9,7 @@ namespace Controllers
     {
         private DragComponent dragComponent;
         private GameArea gameArea;
-        private bool onSandwich;
+        public bool onSandwich;
         private void Start()
         {
             dragComponent = GetComponent<DragComponent>();

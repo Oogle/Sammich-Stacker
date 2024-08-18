@@ -15,6 +15,7 @@ public class GlobalController : MonoBehaviour
     public List<GameObject> placedFruits = new List<GameObject>();
     public float proteinPercentage, veggiePercentage, fruitPercentage;
     [SerializeField] TextMeshProUGUI proteinPercentageDisplay, veggiePercentageDisplay, fruitPercentageDisplay;
+    [SerializeField] private IngredientArea ingredientArea;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class GlobalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CalculatePercentages();
+        
     }
     public void CalculatePercentages(){
         int totalIngredientCount = placedProteins.Count + placedVeggies.Count + placedFruits.Count;
@@ -36,19 +37,8 @@ public class GlobalController : MonoBehaviour
         veggiePercentageDisplay.text = veggiePercentage.ToString() + "%";
         fruitPercentageDisplay.text = fruitPercentage.ToString() + "%";
     }
-    public void SpawnProtein(){
-        int whichProtein = UnityEngine.Random.Range(0, proteins.Length);
-        GameObject protein = Instantiate(proteins[whichProtein],foodSpawnerTransform.position,foodSpawnerTransform.rotation);
-    }
-    public void SpawnVeggie(){
-        int whichVeggie = UnityEngine.Random.Range(0, veggies.Length);
-        GameObject veggie = Instantiate(proteins[whichVeggie],foodSpawnerTransform.position,foodSpawnerTransform.rotation);
-    }
-    public void SpawnFruit(){
-        int whichFruit = UnityEngine.Random.Range(0, fruits.Length);
-        GameObject fruit = Instantiate(proteins[whichFruit],foodSpawnerTransform.position,foodSpawnerTransform.rotation);
-    }
     public void SpawnIngredient(int ingredient){ //0 = protein, 1 = veggie, 2 = fruit. Less than 0 = protein, greater than 2 = fruit.
+        if (ingredientArea.hasIngredient) return;
         GameObject whatToSpawn;
         if (ingredient <= 0){
             whatToSpawn = proteins[Random.Range(0, proteins.Length)];
