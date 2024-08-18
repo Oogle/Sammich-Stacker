@@ -22,30 +22,26 @@ public class CondimentBottle : MonoBehaviour
     private bool rotateUp = true; //Should the bottle be rotating up?
     private bool inPlayArea = false; //Is the bottle inside the acceptable play area?
 
+    [SerializeField] float sprayDelay; //How long (in seconds) should be between glob sprays?
+    [SerializeField] float sprayTimer; //A countdown timer that counts from sprayDelay to 0. Represents how long until the next condiment glob can spawn
+
     // Start is called before the first frame update
     void Start()
     {
+        sprayTimer = sprayDelay; //Maybe start this at zero?
         startCoords = bottleSprite.position;
     }
 
     void OnMouseUp()
     {
-        if(inPlayArea)
-        {
-            sprayCondiment();
-        }
-        else
-        {
-            movingToStart = true;
-        }
-        
+         movingToStart = true;
     }
 
     //Sprays the condiment on to the sandwich
     void sprayCondiment()
     {
         Instantiate(globPrefab, tip.position, Quaternion.identity);
-        movingToStart = true;
+        //movingToStart = true;
     }
 
     //The CondimentBottle layer cannot interact with any other physics layers. This assumes the ONLY other thing on the CondimentBottle layer is the bottleBoundry
@@ -69,9 +65,27 @@ public class CondimentBottle : MonoBehaviour
         }
     }
 
+    void checkMouse()
+    {
+        //Allow the player to spray condiment if timer has been fully delayed
+        if (sprayTimer <= 0 && Input.GetMouseButton(1))
+        {
+            sprayCondiment();
+            sprayTimer = sprayDelay;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if(inPlayArea)
+        {
+            sprayTimer -= Time.deltaTime;
+            checkMouse(); //check if the right mouse buttons is being clicked
+        }
+
+
+
         if(movingToStart)
         {
             //Smoothly tween the sandwhich back to the start area
