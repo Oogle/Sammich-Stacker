@@ -2455,7 +2455,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683075500}
-  - component: {fileID: 1683075501}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -2478,23 +2477,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1683075501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683075499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2bcecaa669e26348b6f1c351296b9dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  proteinText: {fileID: 1816438344}
-  vegetableText: {fileID: 649974187}
-  fruitText: {fileID: 994609992}
-  controller: {fileID: 0}
-  forgiveness_margin: 25
 --- !u!1 &1698605721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,14 +3676,6 @@ PrefabInstance:
     - target: {fileID: 2096829016797809382, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2580212552389105054, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
-      propertyPath: globPrefab
-      value: 
-      objectReference: {fileID: 7256544442354259726, guid: 47f4ce6f7bacdac489da2ff700345724, type: 3}
-    - target: {fileID: 2580212552389105054, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
-      propertyPath: sprayDelay
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3704942269831505413, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
       propertyPath: m_LocalPosition.x
