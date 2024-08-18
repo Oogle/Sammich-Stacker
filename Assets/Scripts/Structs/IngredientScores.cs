@@ -12,12 +12,12 @@ namespace Structs
         public IngredientTypes ingredientType;
         
         [Min(0)]
-        public int calories;
+        public int calories; //Determined by weight of the sandwhich created
 
         [Range(0, 10)]
-        public int taste;
+        public int taste; //Determined by how closely the ratio of the three food types was matched
         
         [Range(0, 10)]
-        public int looks;
+        public int looks; //Determined by heigh of the sandwhich
     }
 }
