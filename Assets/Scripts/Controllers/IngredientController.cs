@@ -10,6 +10,10 @@ namespace Controllers
         private DragComponent dragComponent;
         private GameArea gameArea;
         public bool onSandwich;
+
+        public AudioSource audioSource;
+        public AudioClip sizzleSound;
+
         private void Start()
         {
             dragComponent = GetComponent<DragComponent>();
@@ -23,6 +27,9 @@ namespace Controllers
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (onSandwich) return;
+
+            audioSource.PlayOneShot(sizzleSound);
+
             var otherLayer = other.gameObject.layer;
             var isinMask = killDraggableMask.value == (killDraggableMask.value | (1 << otherLayer));
 

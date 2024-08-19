@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: scores.calories
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: -1602658305667010965, guid: 6a841c88e92a75143993800bce6af003, type: 3}
+      propertyPath: sizzleSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2fd6dc0271bba7b4da4bd64d96707d8d, type: 3}
     - target: {fileID: 1063448704466905632, guid: 6a841c88e92a75143993800bce6af003, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

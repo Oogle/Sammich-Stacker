@@ -19,17 +19,12 @@ public class GlobalController : MonoBehaviour
     [SerializeField] private IngredientArea ingredientArea;
     [SerializeField] private int totalCalories;
     public bool isDone = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // AUDIO
+    public AudioSource audioSource;
+    public AudioClip dropIngredientSound;
+
+
     public void Calculate(){
         //Calculate Ratio Percentages
         int totalIngredientCount = placedProteins.Count + placedVeggies.Count + placedFruits.Count;
@@ -59,5 +54,7 @@ public class GlobalController : MonoBehaviour
             whatToSpawn = fruits[Random.Range(0, fruits.Length)];
         }
         Instantiate(whatToSpawn,foodSpawnerTransform.position,foodSpawnerTransform.rotation);
+
+        audioSource.PlayOneShot(dropIngredientSound);
     }
 }

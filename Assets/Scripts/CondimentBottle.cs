@@ -12,6 +12,7 @@ using UnityEngine;
 
 public class CondimentBottle : MonoBehaviour
 {
+    public AudioSource audioSource;
     private Vector3 startCoords;
     [SerializeField] private float moveSpeed = 30; //How fast the tween towards the start coordinates should be when player releases mouse button
     [SerializeField] private float spinSpeed = 15; //How fast the rotation tween should play
@@ -75,8 +76,17 @@ public class CondimentBottle : MonoBehaviour
         //Allow the player to spray condiment if timer has been fully delayed
         if (globsLeft > 0 && sprayTimer <= 0 && Input.GetMouseButton(1))
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+            
             sprayCondiment();
             sprayTimer = sprayDelay;
+        }
+        if (globsLeft <= 0 || !Input.GetMouseButton(1))
+        {
+            audioSource.Stop();
         }
     }
 
