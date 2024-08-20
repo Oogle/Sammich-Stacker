@@ -3861,6 +3861,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1647360555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5491388103505897318, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
+  m_PrefabInstance: {fileID: 4315163224562161733}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1673117659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5811,12 +5822,16 @@ PrefabInstance:
       objectReference: {fileID: 7256544442354259726, guid: 47f4ce6f7bacdac489da2ff700345724, type: 3}
     - target: {fileID: 2580212552389105054, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
       propertyPath: sprayDelay
-      value: 0.04
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2580212552389105054, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1842811624}
+    - target: {fileID: 2580212552389105054, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
+      propertyPath: condimentSlider
+      value: 
+      objectReference: {fileID: 1647360555}
     - target: {fileID: 3475341194530160452, guid: f70164df54e8f44ed9b66368e4f9fb6b, type: 3}
       propertyPath: m_Enabled
       value: 0
