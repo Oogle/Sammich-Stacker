@@ -15,7 +15,7 @@ namespace Components
         {
             rigidbody = GetComponent<Rigidbody2D>();
         }
-        
+
         public void StartDrag(Vector2 targetPosition, float dampingRatio, float frequency)
         {
             if(!isDraggable) return;
